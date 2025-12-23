@@ -99,7 +99,7 @@ Replace all placeholder credentials with your own:
 - Google Calendar OAuth
 
 #### 📧 Calendar Email
-In `n8nTelegramAgentCalendarAccess.json`:
+In `n8nTelegramAgentCalendarAccess.json`: \n
 "calendar": "your-email@example.com"
 
 4️⃣ Connect the Workflows
