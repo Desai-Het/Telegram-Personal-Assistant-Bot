@@ -100,7 +100,6 @@ Replace all placeholder credentials with your own:
 
 #### 📧 Calendar Email
 In `n8nTelegramAgentCalendarAccess.json`:
-```json
 "calendar": "your-email@example.com" (Change this to your Google Calendar email.)
 
 4️⃣ Connect the Workflows
