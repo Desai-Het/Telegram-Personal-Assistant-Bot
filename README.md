@@ -98,46 +98,64 @@ Replace all placeholder credentials with your own:
 - Google Tasks OAuth
 - Google Calendar OAuth
 
-#### 📧 Calendar Email
-In `n8nTelegramAgentCalendarAccess.json`: \n
+### 📧 Calendar Email
+
+In `n8nTelegramAgentCalendarAccess.json`:
+
 "calendar": "your-email@example.com"
 
-4️⃣ Connect the Workflows
-In n8nTelegramAgent.json:
-Ensure the AI Agent calls the Calendar workflow
-The Calendar workflow must be saved and enabled
+---
 
-5️⃣ Activate Workflows (IMPORTANT)
-Activate both workflows
-The Telegram Trigger only works when active
+### 4️⃣ Connect the Workflows
 
-🎙️ Voice Message Support
-Voice messages are downloaded from Telegram
-Converted to text using Google Speech-to-Text
-Transcript is passed to the AI Agent automatically
+In `n8nTelegramAgent.json`:
+- Ensure the **AI Agent calls the Calendar workflow**
+- The **Calendar workflow must be saved and enabled**
 
-🔐 Security Notes
-❌ Do NOT commit real API keys
-❌ Do NOT commit OAuth tokens
-Credentials are stored safely inside n8n
-JSON files are safe to share once sanitized
+---
 
-🧪 Recommended Testing
-Test with text messages first
-Then test voice messages
+### 5️⃣ Activate Workflows (IMPORTANT)
+- Activate **both workflows**
+- The **Telegram Trigger only works when active**
+
+---
+
+### 🎙️ Voice Message Support
+- Voice messages are downloaded from Telegram  
+- Converted to text using **Google Speech-to-Text**  
+- Transcript is passed to the **AI Agent automatically**
+
+---
+
+### 🔐 Security Notes
+- ❌ Do **NOT** commit real API keys  
+- ❌ Do **NOT** commit OAuth tokens  
+- Credentials are stored safely inside **n8n**  
+- JSON files are safe to share once sanitized
+
+---
+
+### 🧪 Recommended Testing
+- Test with **text messages** first  
+- Then test **voice messages**
+
 Try:
-Reading tasks
-Creating calendar events
-Asking follow-up questions
+- Reading tasks  
+- Creating calendar events  
+- Asking follow-up questions
 
-📌 Limitations
-Uses short-term memory (last few messages)
-Designed for personal use
-No multi-user calendar isolation by default
+---
 
-🚀 Tech Stack
-n8n
-Telegram Bot API
-OpenAI (Chat Models)
-Google Tasks API
-Google Calendar API
+### 📌 Limitations
+- Uses **short-term memory** (last few messages)
+- Designed for **personal use**
+- No multi-user calendar isolation by default
+
+---
+
+### 🚀 Tech Stack
+- n8n  
+- Telegram Bot API  
+- OpenAI (Chat Models)  
+- Google Tasks API  
+- Google Calendar API
