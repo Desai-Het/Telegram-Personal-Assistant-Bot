@@ -100,9 +100,8 @@ Replace all placeholder credentials with your own:
 
 #### 📧 Calendar Email
 In `n8nTelegramAgentCalendarAccess.json`:
-
-```text
 "calendar": "your-email@example.com"
+
 4️⃣ Connect the Workflows
 In n8nTelegramAgent.json:
 Ensure the AI Agent calls the Calendar workflow
