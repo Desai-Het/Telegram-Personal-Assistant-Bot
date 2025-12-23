@@ -100,8 +100,9 @@ Replace all placeholder credentials with your own:
 
 #### 📧 Calendar Email
 In `n8nTelegramAgentCalendarAccess.json`:
-"calendar": "your-email@example.com" (Change this to your Google Calendar email.)
 
+```text
+"calendar": "your-email@example.com"
 4️⃣ Connect the Workflows
 In n8nTelegramAgent.json:
 Ensure the AI Agent calls the Calendar workflow
@@ -133,7 +134,7 @@ Asking follow-up questions
 📌 Limitations
 Uses short-term memory (last few messages)
 Designed for personal use
-Not multi-user calendar isolation by default
+No multi-user calendar isolation by default
 
 🚀 Tech Stack
 n8n
