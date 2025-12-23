@@ -1,0 +1,57 @@
+{
+  "name": "AI Personal Assistant with Telegram",
+  "nodes": [
+    {
+      "type": "n8n-nodes-base.telegramTrigger",
+      "name": "Telegram Trigger",
+      "webhookId": "YOUR_WEBHOOK_ID",
+      "credentials": {
+        "telegramApi": {
+          "id": "YOUR_TELEGRAM_CREDENTIAL_ID",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "name": "AI Agent",
+      "parameters": {
+        "text": "={{ $json.message.text }}",
+        "options": {
+          "systemMessage": "You are a personal assistant that helps users manage tasks and answer questions."
+        }
+      }
+    },
+    {
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "name": "OpenAI Chat Model",
+      "parameters": {
+        "model": "gpt-4.1-mini"
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "YOUR_OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "type": "n8n-nodes-base.googleTasksTool",
+      "name": "get_my_tasks",
+      "credentials": {
+        "googleTasksOAuth2Api": {
+          "id": "YOUR_GOOGLE_TASKS_CREDENTIAL_ID",
+          "name": "Google Tasks account"
+        }
+      }
+    },
+    {
+      "type": "n8n-nodes-base.httpRequest",
+      "name": "Speech to Text",
+      "parameters": {
+        "url": "https://speech.googleapis.com/v1/speech:recognize?key=YOUR_API_KEY_HERE"
+      }
+    }
+  ],
+  "active": false
+}

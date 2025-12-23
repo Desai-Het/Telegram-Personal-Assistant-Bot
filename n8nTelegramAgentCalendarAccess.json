@@ -1,0 +1,43 @@
+{
+  "name": "Google Calendar AI Agent",
+  "nodes": [
+    {
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "name": "AI Agent",
+      "parameters": {
+        "text": "={{ $json.Text }}",
+        "options": {
+          "systemMessage": "You are a calendar assistant that manages Google Calendar events."
+        }
+      }
+    },
+    {
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "name": "OpenAI Chat Model",
+      "parameters": {
+        "model": "gpt-4o-mini"
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "YOUR_OPENAI_CREDENTIAL_ID",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "type": "n8n-nodes-base.googleCalendarTool",
+      "name": "Create Calendar Event",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "YOUR_GOOGLE_CALENDAR_CREDENTIAL_ID",
+          "name": "Google Calendar account"
+        }
+      }
+    }
+  ],
+  "active": false
+}
